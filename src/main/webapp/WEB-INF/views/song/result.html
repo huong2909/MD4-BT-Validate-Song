@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head"></head>
+<body>
+
+<h3>Chúc mừng! bạn đã đăng ký thành công</h3>
+<table border="1" id="products">
+    <tr>
+        <th>Tên bài hát/th>
+        <th>Ca sĩ</th>
+        <th>Thể loại</th>
+        <th>Ảnh</th>
+    </tr>
+    <th:block th:each="pro : ${songs}">
+        <tr>
+
+            <td th:text="${pro.name}" ></td>
+            <td th:text="${pro.author}" ></td>
+            <td th:text="${pro.type}" ></td>
+            <td th:text="${pro.image}" ></td>
+
+        </tr>
+    </th:block>
+</table>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

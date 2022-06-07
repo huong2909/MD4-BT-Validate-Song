@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head"></head>
+<body>
+<h3>Đăng ký</h3>
+<form th:object="${song}" th:action="@{/validate}" method="post" >
+    <table id="products">
+        <tr>
+            <td>Tên bài hát:</td>
+            <td><input type="text" th:field="*{name}"></td>
+            <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></td>
+        </tr>
+
+        <tr>
+            <td>Tác giả:</td>
+            <td><input type="text" th:field="*{author}"></td>
+            <td th:if="${#fields.hasErrors('author')}" th:errors="*{author}"></td>
+        </tr>
+        <tr>
+            <td>Thể loại:</td>
+            <td><input type="text" th:field="*{type}"></td>
+            <td th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></td>
+        </tr>
+        <tr>
+            <td>Ảnh:</td>
+            <td><input type="text" th:field="*{image}"></td>
+<!--            <td th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></td>-->
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <center><input type="submit"></center>
+            </td>
+        </tr>
+
+    </table>
+</form>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>
